@@ -1,7 +1,10 @@
 const Koa = require('koa')
+const { normal } = require('./tepl')
+
 const app = new Koa()
 app.use(async (ctx, next) => {
-    ctx.body = '电影首页'
+    ctx.type = 'text/html; charset=utf-8'
+    ctx.body = normal
 })
 
 app.listen(4455)
